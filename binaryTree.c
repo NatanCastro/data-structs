@@ -5,7 +5,7 @@
 void print_binary_tree(struct BinaryTreeNode *head) {
   if (head == NULL) return;
 
-  printf("value: %d\n", head->value);
+  printf("%d-", head->value);
 
   print_binary_tree(head->left);
   print_binary_tree(head->right);
@@ -38,4 +38,5 @@ void binary_tree_example(void) {
   headLeft.right = &leftRight;
 
   print_binary_tree(&treeHead);
+  printf("\n");
 }
