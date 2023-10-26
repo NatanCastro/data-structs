@@ -8,8 +8,5 @@
 #define TREE_START "tree start"
 #define TREE_END "tree end"
 
-void linked_list_example(void);
-void tree_example(void);
-void separetor(void);
 
 #endif

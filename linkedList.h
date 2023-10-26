@@ -9,14 +9,15 @@ struct ListNode {
   struct ListNode *next;
 };
 
-void print_list(struct ListNode *);
+void print_linked_list(struct ListNode *);
+void linked_list_example(void);
 
 #endif
 
 #ifdef LINKED_LIST_IMPLEMENTATION
 
 
-void print_list(struct ListNode *head) {
+void print_linked_list(struct ListNode *head) {
   if (head == NULL)
   {
     printf("NULL\n");
@@ -24,7 +25,23 @@ void print_list(struct ListNode *head) {
   }
 
   printf("%d -> ", head->value);
-  print_list((*head).next);
+  print_linked_list((*head).next);
+}
+
+void linked_list_example(void) {
+  struct ListNode listHead = {
+    .value = 3,
+    .next = NULL,
+  };
+
+  struct ListNode next = {
+    .value = 4,
+    .next = NULL
+  };
+
+  listHead.next = &next;
+
+  print_linked_list(&listHead);
 }
 
 #endif
