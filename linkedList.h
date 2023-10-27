@@ -3,45 +3,59 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 
-struct ListNode {
+typedef struct ListNode {
   int value;
   struct ListNode *next;
-};
+} list_node_t;
 
-void print_linked_list(struct ListNode *);
+void print_linked_list(list_node_t *);
+list_node_t *create_list_node(int);
+void delete_linked_list(list_node_t *);
 void linked_list_example(void);
 
 #endif
 
 #ifdef LINKED_LIST_IMPLEMENTATION
 
-
-void print_linked_list(struct ListNode *head) {
-  if (head == NULL)
-  {
-    printf("NULL\n");
+void print_linked_list(list_node_t *head) {
+  if (head == NULL) {
+    puts("NULL");
     return;
   }
 
-  printf("%d -> ", head->value);
-  print_linked_list((*head).next);
+  printf("%i -> ", head->value);
+
+  print_linked_list(head->next);
+}
+
+list_node_t *create_list_node(int data) {
+  list_node_t *node = malloc(sizeof(list_node_t));
+  node->value = data;
+  node->next = NULL;
+
+  return node;
+}
+
+void delete_linked_list(list_node_t *head) {
+  if (head == NULL) return;
+
+  delete_linked_list(head->next);
+  free(head);
 }
 
 void linked_list_example(void) {
-  struct ListNode listHead = {
-    .value = 3,
-    .next = NULL,
-  };
+  list_node_t *tmp, *node = NULL;
+  list_node_t *head = create_list_node(9);
+  tmp = create_list_node(44);
+  head->next = tmp;
+  node = tmp;
+  tmp = create_list_node(2);
+  node->next = tmp;
 
-  struct ListNode next = {
-    .value = 4,
-    .next = NULL
-  };
-
-  listHead.next = &next;
-
-  print_linked_list(&listHead);
+  print_linked_list(head);
+  delete_linked_list(head);
 }
 
 #endif

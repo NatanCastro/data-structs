@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #define LINKED_LIST_IMPLEMENTATION
 #include "linkedList.h"
 #define BINARY_TREE_IMPLEMENTATION
