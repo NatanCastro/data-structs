@@ -1,7 +1,23 @@
-#include "linkedList.h"
+#ifndef LINKED_LIST_H_
+#define LINKED_LIST_H_
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct ListNode {
+  int value;
+  struct ListNode *next;
+} list_node_t;
+
+void print_linked_list(list_node_t *);
+list_node_t *create_list_node(int);
+void delete_linked_list(list_node_t *);
+void linked_list_example(void);
+
+#endif
+
+#ifdef LINKED_LIST_IMPLEMENTATION
 
 void print_linked_list(list_node_t *head) {
   if (head == NULL) {
@@ -41,3 +57,5 @@ void linked_list_example(void) {
   print_linked_list(head);
   delete_linked_list(head);
 }
+
+#endif

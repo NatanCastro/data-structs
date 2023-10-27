@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #define LINKED_LIST_IMPLEMENTATION
-#include "linkedList.h"
+#include "linked_list.h"
 #define BINARY_TREE_IMPLEMENTATION
-#include "binaryTree.h"
+#include "binary_tree.h"
 #include "main.h"
 #include <stdint.h>
 #include <stdio.h>
