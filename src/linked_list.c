@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void print_linked_list(list_node_t *head) {
   if (head == NULL) {
     puts("NULL");
@@ -23,7 +22,8 @@ list_node_t *create_list_node(int data) {
 }
 
 void delete_linked_list(list_node_t *head) {
-  if (head == NULL) return;
+  if (head == NULL)
+    return;
 
   delete_linked_list(head->next);
   free(head);

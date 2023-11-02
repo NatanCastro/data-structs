@@ -1,13 +1,16 @@
-#include <stdlib.h>
-#define LINKED_LIST_IMPLEMENTATION
-#include "linked_list.h"
-#define BINARY_TREE_IMPLEMENTATION
 #include "binary_tree.h"
-#include "main.h"
+#include "linked_list.h"
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void separetor(void);
+
+#define SEPARETOR_LENGTH 20
+#define LINKED_LIST_START "linked list start"
+#define LINKED_LIST_END "linked list end"
+#define TREE_START "binary tree start"
+#define TREE_END "binary tree end"
 
 int main(void) {
   printf("%s\n", LINKED_LIST_START);
@@ -16,9 +19,9 @@ int main(void) {
 
   separetor();
 
-  printf("%s\n",TREE_START);
+  printf("%s\n", TREE_START);
   binary_tree_example();
-  printf("%s\n",TREE_END);
+  printf("%s\n", TREE_END);
 }
 
 void separetor(void) {
